@@ -104,7 +104,7 @@ class GSTR2BTransactionsXMLGenerator:
             vendor_entry = ET.SubElement(voucher, "ALLLEDGERENTRIES.LIST")
             ET.SubElement(vendor_entry, "LEDGERNAME").text = vendor_name
             ET.SubElement(vendor_entry, "ISDEEMEDPOSITIVE").text = "Yes"  # Credit
-            ET.SubElement(vendor_entry, "AMOUNT").text = f"-{invoice.invoice_value:.2f}"
+            ET.SubElement(vendor_entry, "AMOUNT").text = f"{invoice.invoice_value:.2f}"
             
             # Add bill details
             if invoice.invoice_number:
